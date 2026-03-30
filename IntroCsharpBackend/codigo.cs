@@ -158,3 +158,18 @@
 
 // //PROGRAMACION FUNCIONAL
 
+var names = new List<string> { "Alice", "Bob", "Charlie", "David", "Eve" };
+
+var nameResult = from n in names
+                    where n.StartsWith("A") || n.StartsWith("B")    
+                orderby n descending
+                select n;
+var nameResult2 = names.Where(n => n.StartsWith("A") || n.StartsWith("B"))
+                        .OrderByDescending(n => n);
+
+
+foreach (var name in nameResult)
+{
+    Console.WriteLine(name);
+}
+
